@@ -13,7 +13,11 @@ const Color secondaryGreen = Color(0xFF5AB6A5);
 const Color primaryBlue = Color(0xFF81D4FA);
 
 // ====================================================================
+<<<<<<< HEAD
 // WIDGET RAIZ E DEFINIÇÕES DE ROTAS
+=======
+// WIDGET RAIZ E TELA DE LOGIN
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
 // ====================================================================
 
 class MyApp extends StatelessWidget {
@@ -24,6 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Lume App',
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       initialRoute: '/',
       routes: {
         '/': (context) => const LoginPage(),
@@ -32,14 +37,20 @@ class MyApp extends StatelessWidget {
         '/parentDashboard': (context) => const ParentDashboard(),
         '/childHome': (context) => const ChildHomePage(),
       },
+=======
+      home: const LoginPage(),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
     );
   }
 }
 
+<<<<<<< HEAD
 // ====================================================================
 // TELA DE LOGIN (FRAME 1)
 // ====================================================================
 
+=======
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -49,7 +60,11 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+<<<<<<< HEAD
             TopSection(height: 420),
+=======
+            TopSection(),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
             Padding(
               padding: EdgeInsets.all(32.0),
               child: LoginForm(),
@@ -62,6 +77,7 @@ class LoginPage extends StatelessWidget {
 }
 
 // --------------------------------------------------------------------
+<<<<<<< HEAD
 // WIDGET TOPSECTION (Fundo Curvo e Logo) - Reutilizável
 // --------------------------------------------------------------------
 
@@ -70,20 +86,36 @@ class TopSection extends StatelessWidget {
   final String? title;
 
   const TopSection({this.height = 420, this.title, super.key});
+=======
+// WIDGET TOPSECTION (Fundo Laranja e Logo)
+// --------------------------------------------------------------------
+
+class TopSection extends StatelessWidget {
+  const TopSection({super.key});
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: <Widget>[
+<<<<<<< HEAD
         ClipPath(
           clipper: WaveClipper(),
           child: Container(
             height: height,
+=======
+        // Fundo Laranja Curvo (ClipPath)
+        ClipPath(
+          clipper: WaveClipper(),
+          child: Container(
+            height: 420, // Altura ajustada
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
             color: primaryOrange,
           ),
         ),
 
+<<<<<<< HEAD
         Positioned(
           top: height / 2.5,
           child: Column(
@@ -104,6 +136,14 @@ class TopSection extends StatelessWidget {
                   ),
                 ),
             ],
+=======
+        // Imagem da Logo
+        Positioned(
+          top: 180, // Posição vertical ajustada
+          child: Image.asset(
+            'assets/images/logo.png', // Verifique o caminho
+            height: 250, // Tamanho ajustado
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
           ),
         ),
       ],
@@ -154,9 +194,16 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   bool _isLoginEnabled = true;
 
+<<<<<<< HEAD
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
 
+=======
+  // Controladores: Usando late para inicializá-los no initState
+  late final TextEditingController _emailController;
+  late final TextEditingController _passwordController;
+  
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
   @override
   void initState() {
     super.initState();
@@ -171,10 +218,18 @@ class _LoginFormState extends State<LoginForm> {
     super.dispose();
   }
 
+<<<<<<< HEAD
+=======
+  // Lógica de autenticação simulada e navegação
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
   void _handleLogin(BuildContext context) {
     final email = _emailController.text;
     final password = _passwordController.text;
 
+<<<<<<< HEAD
+=======
+    // Simulação de validação
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Por favor, preencha todos os campos.')),
@@ -182,11 +237,23 @@ class _LoginFormState extends State<LoginForm> {
       return;
     }
 
+<<<<<<< HEAD
     Navigator.pushReplacementNamed(context, '/parentDashboard');
   }
 
   void _navigateToParentSignUp(BuildContext context) {
     Navigator.pushNamed(context, '/parentSignUp');
+=======
+    print('Tentativa de login: $email / $password');
+    
+    // **Navegação para a HomeScreen**
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      ),
+    );
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
   }
 
   @override
@@ -194,16 +261,40 @@ class _LoginFormState extends State<LoginForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+<<<<<<< HEAD
+=======
+        // Título "Bem-vindo ao Lume"
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
         const SizedBox(height: 50),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
+<<<<<<< HEAD
             Text('Bem-vindo ao ', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400, color: Colors.black54)),
             Text('Lume', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: primaryOrange)),
+=======
+            Text(
+              'Bem-vindo ao ',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w400,
+                color: Colors.black54,
+              ),
+            ),
+            Text(
+              'Lume',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: primaryOrange,
+              ),
+            ),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
           ],
         ),
         const SizedBox(height: 40),
 
+<<<<<<< HEAD
         _buildLabel('E-mail'),
         _buildTextField('Digite seu email', false, _emailController),
         const SizedBox(height: 20),
@@ -212,21 +303,52 @@ class _LoginFormState extends State<LoginForm> {
         _buildTextField('Digite sua senha', true, _passwordController),
         const SizedBox(height: 30),
 
+=======
+        // Campo de E-mail
+        const Text('E-mail',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 8),
+        _buildTextField('Digite seu email', false, _emailController),
+        const SizedBox(height: 20),
+
+        // Campo de Senha
+        const Text('Senha',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 8),
+        _buildTextField('Digite sua senha', true, _passwordController),
+        const SizedBox(height: 30),
+
+        // Switch e texto "Login"
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
         Row(
           children: [
             Switch(
               value: _isLoginEnabled,
               onChanged: (bool newValue) {
+<<<<<<< HEAD
                 setState(() => _isLoginEnabled = newValue);
+=======
+                setState(() {
+                  _isLoginEnabled = newValue;
+                });
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
               },
               activeColor: primaryOrange,
               inactiveTrackColor: Colors.grey[300],
             ),
+<<<<<<< HEAD
             const Text('Login', style: TextStyle(fontSize: 18, color: Colors.black87)),
+=======
+            const Text(
+              'Login',
+              style: TextStyle(fontSize: 18, color: Colors.black87),
+            ),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
           ],
         ),
         const SizedBox(height: 50),
 
+<<<<<<< HEAD
         _buildAccessButton(context, 'Acessar', _handleLogin),
         const SizedBox(height: 20),
 
@@ -249,10 +371,15 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
         ),
+=======
+        // Botão "Acessar"
+        _buildAccessButton(context),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
       ],
     );
   }
 
+<<<<<<< HEAD
   Widget _buildLabel(String text) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
@@ -287,10 +414,40 @@ class _LoginFormState extends State<LoginForm> {
 
   Widget _buildAccessButton(
       BuildContext context, String text, Function(BuildContext) onPressed) {
+=======
+  // Widget Auxiliar para os campos de texto (TextField)
+  Widget _buildTextField(String hint, bool isPassword, TextEditingController controller) {
+  return TextField(
+    controller: controller, 
+    obscureText: isPassword,
+    decoration: InputDecoration(
+      hintText: hint,
+      contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.0),
+        borderSide: BorderSide(color: Colors.grey.shade400),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.0),
+        borderSide: BorderSide(color: Colors.grey.shade400, width: 1.0),
+      ),
+      focusedBorder: OutlineInputBorder( // <<-- CORREÇÃO: 'const' REMOVIDO
+        borderRadius: BorderRadius.circular(30.0),
+        borderSide: const BorderSide( // O 'const' pode ficar aqui, pois secondaryGreen é const global
+            color: secondaryGreen, width: 2.0),
+      ),
+    ),
+  );
+}
+
+  // Widget Auxiliar para o botão Acessar (com navegação)
+  Widget _buildAccessButton(BuildContext context) {
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
     return Container(
       width: double.infinity,
       height: 55,
       decoration: BoxDecoration(
+<<<<<<< HEAD
         gradient: const LinearGradient(colors: [primaryBlue, secondaryGreen], begin: Alignment.centerLeft, end: Alignment.centerRight),
         borderRadius: BorderRadius.circular(30.0),
         boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), spreadRadius: 1, blurRadius: 4, offset: const Offset(0, 3))],
@@ -644,6 +801,41 @@ class _ChildSignUpPageState extends State<ChildSignUpPage> {
         child: Text(
           text,
           style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+=======
+        gradient: const LinearGradient(
+          colors: [
+            primaryBlue,
+            secondaryGreen,
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+        borderRadius: BorderRadius.circular(30.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 4,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextButton(
+        onPressed: () => _handleLogin(context), 
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
+        child: const Text(
+          'Acessar',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
         ),
       ),
     );
@@ -651,18 +843,30 @@ class _ChildSignUpPageState extends State<ChildSignUpPage> {
 }
 
 // ====================================================================
+<<<<<<< HEAD
 // DASHBOARD DO PAI (Controle de Apps e Tarefas)
 // ====================================================================
 
 class ParentDashboard extends StatelessWidget {
   const ParentDashboard({super.key});
+=======
+// TELA HOME (FRAME 2) E SEUS COMPONENTES
+// ====================================================================
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       appBar: CustomAppBar(
         onChildAdd: () => Navigator.pushNamed(context, '/childSignUp'),
       ),
+=======
+      appBar: const CustomAppBar(),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -670,6 +874,7 @@ class ParentDashboard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const SizedBox(height: 10),
+<<<<<<< HEAD
               Center(
                 child: Image.asset('assets/images/lume_logo_completa.png', height: 80, errorBuilder: (context, error, stackTrace) =>
                     const Text('Lume | Controle Parental', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: secondaryGreen))),
@@ -693,6 +898,32 @@ class ParentDashboard extends StatelessWidget {
               const SizedBox(height: 15),
 
               AddChildButton(onPressed: () => Navigator.pushNamed(context, '/childSignUp')),
+=======
+              // Simulação da Logo Lume + Controle Parental
+              Center(
+                child: Image.asset(
+                  'assets/images/lume_logo_completa.png', 
+                  height: 120,
+                  // Placeholder caso a imagem não seja encontrada
+                  errorBuilder: (context, error, stackTrace) => Column(
+                    children: [
+                      Image.asset('assets/images/logo.png', height: 80), // Tenta usar a logo menor
+                      const Text('CONTROLE PARENTAL', style: TextStyle(fontSize: 14, color: Colors.grey)),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+              
+              // Cards de Filhos
+              const ChildCard(name: "Miguel", color: primaryOrange),
+              const SizedBox(height: 15),
+              const ChildCard(name: "Alice", color: primaryOrange),
+              const SizedBox(height: 15),
+
+              // Botão Adicionar Filho
+              const AddChildButton(),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
               const SizedBox(height: 100),
             ],
           ),
@@ -704,12 +935,20 @@ class ParentDashboard extends StatelessWidget {
 }
 
 // --------------------------------------------------------------------
+<<<<<<< HEAD
 // WIDGETS DA DASHBOARD DO PAI
 // --------------------------------------------------------------------
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onChildAdd;
   const CustomAppBar({this.onChildAdd, super.key});
+=======
+// WIDGETS DA HOME
+// --------------------------------------------------------------------
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({super.key});
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
 
   @override
   Size get preferredSize => const Size.fromHeight(100.0);
@@ -717,11 +956,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+<<<<<<< HEAD
       automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
       elevation: 0,
       title: Padding(
         padding: const EdgeInsets.only(top: 20.0),
+=======
+      automaticallyImplyLeading: false, 
+      backgroundColor: Colors.white,
+      elevation: 0,
+      title: Padding(
+        padding: const EdgeInsets.only(top: 20.0), 
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -732,11 +979,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Text('seja bem vinda!', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black54)),
               ],
             ),
+<<<<<<< HEAD
             Row(
               children: [
                 IconButton(icon: const Icon(Icons.group_add, color: primaryBlue), onPressed: onChildAdd, tooltip: 'Adicionar Filho'),
                 const CircleAvatar(radius: 25, child: Icon(Icons.person, size: 30), backgroundColor: primaryOrange),
               ],
+=======
+            const CircleAvatar(
+              radius: 25,
+              child: Icon(Icons.person, size: 30), // Placeholder
+              backgroundColor: Colors.grey,
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
             ),
           ],
         ),
@@ -745,6 +999,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
+<<<<<<< HEAD
 class ChildControlCard extends StatelessWidget {
   final String name;
   final Color color;
@@ -779,12 +1034,55 @@ class ChildControlCard extends StatelessWidget {
             const Icon(Icons.chevron_right, color: Colors.white, size: 30),
           ],
         ),
+=======
+class ChildCard extends StatelessWidget {
+  final String name;
+  final Color color;
+
+  const ChildCard({required this.name, required this.color, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 25,
+            backgroundColor: Colors.white,
+            child: Icon(Icons.face, color: color), // Placeholder
+          ),
+          const SizedBox(width: 15),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white)),
+                const Text('Verificar progresso', style: TextStyle(fontSize: 16, color: Colors.white70)),
+              ],
+            ),
+          ),
+          const Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 20),
+        ],
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
       ),
     );
   }
 }
 
 class AddChildButton extends StatelessWidget {
+<<<<<<< HEAD
   final VoidCallback onPressed;
   const AddChildButton({required this.onPressed, super.key});
 
@@ -808,6 +1106,33 @@ class AddChildButton extends StatelessWidget {
             Text('Vincular Novo Filho', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: secondaryGreen)),
           ],
         ),
+=======
+  const AddChildButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Colors.grey.shade300),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 3,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Icon(Icons.add_circle_outline, color: secondaryGreen, size: 28),
+          SizedBox(width: 10),
+          Text('Adicionar filho', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: secondaryGreen)),
+        ],
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
       ),
     );
   }
@@ -819,13 +1144,24 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+<<<<<<< HEAD
       height: 70,
       decoration: const BoxDecoration(
         gradient: LinearGradient(colors: [primaryBlue, secondaryGreen], begin: Alignment.centerLeft, end: Alignment.centerRight),
+=======
+      height: 70, 
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [primaryBlue, secondaryGreen],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+<<<<<<< HEAD
           _buildNavItem(Icons.home, 'Home', primaryOrange, () => {}),
           _buildNavItem(Icons.star, 'Recompensas', Colors.white, () => {}),
           _buildNavItem(Icons.settings, 'Config.', Colors.white, () => {}),
@@ -1008,10 +1344,33 @@ class ChildHomePage extends StatelessWidget {
               ],
             ),
           ),
+=======
+          IconButton(icon: const Icon(Icons.settings, color: Colors.white, size: 30), onPressed: () {}),
+          Stack(
+            children: [
+              IconButton(icon: const Icon(Icons.notifications, color: Colors.white, size: 30), onPressed: () {}),
+              Positioned(
+                right: 0,
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: primaryOrange,
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: Colors.white, width: 2),
+                  ),
+                  constraints: const BoxConstraints(minWidth: 16, minHeight: 16),
+                  child: const Text('25', style: TextStyle(color: Colors.white, fontSize: 10), textAlign: TextAlign.center),
+                ),
+              )
+            ],
+          ),
+          IconButton(icon: const Icon(Icons.person, color: Colors.white, size: 30), onPressed: () {}),
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
         ],
       ),
     );
   }
+<<<<<<< HEAD
 
   Widget _buildAppTimeTile(String appName, String time, Color color) {
     return Card(
@@ -1062,4 +1421,6 @@ class ChildHomePage extends StatelessWidget {
       ),
     );
   }
+=======
+>>>>>>> 36aa2c77c3c657b2c41c7c9e504881f0c3c4d9f2
 }
